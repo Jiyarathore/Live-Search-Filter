@@ -5,7 +5,10 @@ import {BrowserRouter} from "react-router-dom";
 import "./index.css";
 
 ReactDOM.render( 
-  <BrowserRouter>
+  
+  // <BrowserRouter >
+  // hyuhb
   <App/>
-  </BrowserRouter>,
+  // </BrowserRouter>,
+  ,
   document.getElementById("root"));
