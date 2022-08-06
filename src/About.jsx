@@ -1,7 +1,7 @@
 import React from "react";
 
-const About = ()=>{
-    return <h1>I am a About Page</h1>
+const About = ({name})=>{
+    return <h1>I am a {name} Page</h1>
     
 };
 

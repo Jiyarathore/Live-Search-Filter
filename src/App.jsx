@@ -1,38 +1,55 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  NavLink,
+  // useRouteMatch,
+  /* useParams*/
+} from "react-router-dom";
 import About from "./About";
 import Contact from "./Contact";
 import Error from "./Error";
-import Menu from "./Menu";
+import User from "./User";
+// import Menu from "./Menu";
+// import Service from "./Service";
 
-const App=()=>{
+const App = () => {
+  return (
+    <>
+      <Router>
+        <div>
+          <div className='menu_style'>
 
-const Name =()=>{
-  return <h1>Hello i am a name page</h1>;
+            {/* <Link to="/about">About</Link>
+          
+            <Link to="/service">Service</Link>
+         
+            <Link to="/contact">Contact</Link> */}
 
-}
+            <NavLink exact activeClassName="active_class" to='/about'>About</NavLink>
+            <NavLink exact activeClassName="active_class" to='/contact'>Contact</NavLink>
+            <NavLink exact activeClassName="active_class" to='/user'>User</NavLink>
+            <NavLink exact activeClassName="active_class" to='/service'>Service</NavLink>
 
-    return (
-        <>
-        {/* <Routes>
-            <Route  path="/"><About/></Route>
-            <Route path="/contact" component={Contact}/>
-        </Routes> */}
-        <BrowserRouter>
-        <Menu/>
-      <Routes>
-        <Route path="/" element={<About/>}>
-        </Route>
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/contact/Name" element={<Name />} />
-          <Route element={<Error/>}/>
-      </Routes>
-    </BrowserRouter>
 
-            {/* <About/>
-            <Contact/> */}
-        </>
-    );
+          </div>
+
+          <Routes>
+            <Route path="/about" element={<About name="About" />}>
+            </Route>
+            <Route path="/service" element={<About name="Service" />}>
+            </Route>
+            <Route path="/contact" element={<Contact />}>
+            </Route>
+              <Route path = "/user:fname" element={<User/>}></Route>
+              <Route element={<Error/>}/>
+          </Routes>
+        </div>
+      </Router>
+
+    </>
+  );
 };
 
 export default App;
